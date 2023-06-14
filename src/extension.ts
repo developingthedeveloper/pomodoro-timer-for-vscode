@@ -5,10 +5,16 @@ let pomodoro: any;
 let defaultPomodoroMinutes: number = 25;
 let minutes: number = defaultPomodoroMinutes;
 let seconds: number = 59;
+let isStarted: Boolean = false;
 
 export function activate(context: vscode.ExtensionContext) {	
 		
 	statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
+	statusBar.command = "developingthedeveloper-dev-pomodoro-timer.pomodoroStatusBar";	
+
+	let pomodoroStatusBarCommand = vscode.commands.registerCommand('developingthedeveloper-dev-pomodoro-timer.pomodoroStatusBar', () => {		
+		pomodoroStatusBar();
+	});
 
 	let pomodoroStart = vscode.commands.registerCommand('developingthedeveloper-dev-pomodoro-timer.startPomodoro', () => {		
 		start();
@@ -38,11 +44,25 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(pomodoroReset);
 	context.subscriptions.push(pomodoroPause);
 	context.subscriptions.push(pomodoroResume);
+
+	label();
 }
 
 export function deactivate() {}
 
+function pomodoroStatusBar(): void {
+
+	if (isStarted === false) {
+		start();
+	} else {
+		pause();
+	}
+
+}
+
 function start(): void {
+
+	isStarted = true;
 
 	pomodoro = setInterval(() => {
 		
@@ -69,6 +89,8 @@ function resume(): void {
 
 function pause(): void {
 	clearInterval(pomodoro);
+	isStarted = false;
+	label("debug-pause");
 }
 
 function reset(): void {
@@ -98,11 +120,13 @@ async function finished(): Promise<void> {
 
 }
 
-function label(): void {
+function label(icon: String = "debug-start"): void {
 
 	let label: string = vscode.workspace.getConfiguration()
 		.get("pomodoro.status.bar.label") ?? "{mm}:{ss}";
 
+	
+	label = "$("+ icon +") " + label;
 	label = label.replace("{mm}", minutes.toString());
 	label = label.replace("{ss}", seconds.toString());
 
