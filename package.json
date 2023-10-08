@@ -1,9 +1,10 @@
 {
   "name": "developingthedeveloper-dev-pomodoro-timer",
-  "displayName": "Pomodoro Timer",
+  "displayName": "Simple Pomodoro Timer",
   "description": "Pomodoro Timer for visual studio code",
   "keywords": ["timer", "pomodoro", "pomodoro-technique"],
   "icon": "clock.png",
+  "publisher": "developingthedeveloper",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.78.0"
