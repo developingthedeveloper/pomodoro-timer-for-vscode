@@ -10,3 +10,6 @@ If you want to start, pause, resume or reset the timer, you can use the command 
 
 ## Custom settings
 The extension has some configuration options. For example, you can configure the pomodoro block, get notification when pomodoro is finished and custom the label in status bar.
+
+## Icon
+Icon downloaded from https://hotpot.ai/free-icons

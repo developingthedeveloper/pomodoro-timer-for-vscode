@@ -3,6 +3,7 @@
   "displayName": "Pomodoro Timer",
   "description": "Pomodoro Timer for visual studio code",
   "keywords": ["timer", "pomodoro", "pomodoro-technique"],
+  "icon": "clock.png",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.78.0"
