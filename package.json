@@ -2,9 +2,15 @@
   "name": "developingthedeveloper-dev-pomodoro-timer",
   "displayName": "Pomodoro Timer",
   "description": "Pomodoro Timer for visual studio code",
-  "version": "0.0.1",
+  "keywords": ["timer", "pomodoro", "pomodoro-technique"],
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.78.0"
+  },
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/developingthedeveloper/pomodoro-timer-for-vscode"
   },
   "categories": [
     "Other"
@@ -24,8 +30,7 @@
         "command": "developingthedeveloper-dev-pomodoro-timer.pausePomodoro",
         "title": "Pause",
         "category": "Pomodoro"
-      }
-      ,
+      },
       {
         "command": "developingthedeveloper-dev-pomodoro-timer.resumePomodoro",
         "title": "Resume",
@@ -35,7 +40,7 @@
         "command": "developingthedeveloper-dev-pomodoro-timer.resetPomodoro",
         "title": "Reset",
         "category": "Pomodoro"
-      } 
+      }
     ],
     "configuration": {
       "title": "Pomodoro Timer",
@@ -68,16 +73,16 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.78.0",
     "@types/glob": "^8.1.0",
     "@types/mocha": "^10.0.1",
     "@types/node": "20.2.5",
+    "@types/vscode": "^1.78.0",
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
+    "@vscode/test-electron": "^2.3.2",
     "eslint": "^8.41.0",
     "glob": "^8.1.0",
     "mocha": "^10.2.0",
-    "typescript": "^5.1.3",
-    "@vscode/test-electron": "^2.3.2"
+    "typescript": "^5.2.2"
   }
 }
